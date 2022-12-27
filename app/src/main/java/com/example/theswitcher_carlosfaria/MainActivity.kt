@@ -2,7 +2,6 @@ package com.example.theswitcher_carlosfaria
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.theswitcher_carlosfaria.adapters.SwitchAdapter
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         initializeData()
 
-        switchList.adapter = SwitchAdapter(divisionList)
+        switchList.adapter = SwitchAdapter(divisionList, this)
     }
 
     private fun initializeData(){
