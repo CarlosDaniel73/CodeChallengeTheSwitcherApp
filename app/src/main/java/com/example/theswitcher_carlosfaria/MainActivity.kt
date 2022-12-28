@@ -2,6 +2,7 @@ package com.example.theswitcher_carlosfaria
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.theswitcher_carlosfaria.adapters.SwitchAdapter
@@ -29,6 +30,11 @@ class MainActivity : AppCompatActivity() {
         switchList = findViewById(R.id.homeSwitchesList)
         switchList.layoutManager = LinearLayoutManager(this)
         switchList.setHasFixedSize(true)
+
+        val dividerDecoration = DividerItemDecoration(this,
+            LinearLayoutManager(this).orientation)
+
+        switchList.addItemDecoration(dividerDecoration)
 
         initializeData()
 
