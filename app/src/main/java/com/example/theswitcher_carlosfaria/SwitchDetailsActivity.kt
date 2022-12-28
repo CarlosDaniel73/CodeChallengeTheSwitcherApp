@@ -21,8 +21,20 @@ class SwitchDetailsActivity : AppCompatActivity() {
         val textViewStatusTitle = findViewById<TextView>(R.id.textViewStatusTitle)
         val textViewStatus = findViewById<TextView>(R.id.textViewStatus)
 
+        setUIDetails(divisionSwitchStatus, imageViewDivisionSwitch, textViewStatus, textViewStatusTitle)
+    }
+
+    private fun setUIDetails(divisionSwitchStatus : Boolean, imageViewDivisionSwitch: ImageView,
+                             textViewStatus : TextView, textViewStatusTitle : TextView){
         if(divisionSwitchStatus){
             imageViewDivisionSwitch.setImageResource(R.drawable.img)
+            textViewStatus.setText(R.string.switch_on)
+        }else{
+            imageViewDivisionSwitch.setImageResource(R.drawable.light_off)
+            textViewStatus.setText(R.string.switch_off)
         }
+
+        val title = String.format(resources.getString(R.string.switch_details_title), divisionName)
+        textViewStatusTitle.text = title
     }
 }
