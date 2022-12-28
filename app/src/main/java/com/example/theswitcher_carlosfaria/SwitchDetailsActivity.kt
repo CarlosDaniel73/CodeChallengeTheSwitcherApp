@@ -3,6 +3,7 @@ package com.example.theswitcher_carlosfaria
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 
 class SwitchDetailsActivity : AppCompatActivity() {
@@ -13,6 +14,15 @@ class SwitchDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_switch_details)
+
+        //Defining Action Bar
+        setSupportActionBar(findViewById(R.id.detailsToolbar))
+        supportActionBar!!.setDisplayShowTitleEnabled(false)
+        //Customize the Back Button
+        val backButton = findViewById<LinearLayout>(R.id.backButton)
+        backButton.setOnClickListener {
+            finish()
+        }
 
         divisionName = intent.getStringExtra("divisionName").toString()
         divisionSwitchStatus = intent.getBooleanExtra("divisionSwitchStatus", false)
