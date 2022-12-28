@@ -27,6 +27,9 @@ class SwitchDetailsActivity : AppCompatActivity() {
         divisionName = intent.getStringExtra("divisionName").toString()
         divisionSwitchStatus = intent.getBooleanExtra("divisionSwitchStatus", false)
 
+        val toolbarTitle = findViewById<TextView>(R.id.detailsToolbarTitle)
+        toolbarTitle.text = divisionName
+
         val imageViewDivisionSwitch = findViewById<ImageView>(R.id.imageViewLight)
         val textViewStatusTitle = findViewById<TextView>(R.id.textViewStatusTitle)
         val textViewStatus = findViewById<TextView>(R.id.textViewStatus)
